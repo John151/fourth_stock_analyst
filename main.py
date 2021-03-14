@@ -1,5 +1,4 @@
-import scrape
-import parse
+from reddit_tracker import scrape, parse
 
 
 def main():

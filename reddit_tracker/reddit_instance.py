@@ -1,7 +1,8 @@
 import praw
 import psaw
-from keys import CLIENT_ID, SECRET
-# credentials
+from config import CLIENT_ID, SECRET
+# praw and psaw are both reddit api wrapper libraries, I'm not sure which is better for this project yet
+
 
 # reddit object for praw library
 def create_instance():

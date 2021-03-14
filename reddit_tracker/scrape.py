@@ -1,4 +1,4 @@
-from reddit_instance import create_instance
+from reddit_tracker.reddit_instance import create_instance
 '''for reference:
  youtuber sentdex has a lot of useful information, much of this was
  found on his channel https://www.youtube.com/watch?v=KX2jvnQ3u60'''
