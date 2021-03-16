@@ -1,20 +1,20 @@
 import psycopg2
 import psycopg2.extras
-import ark_config as ac
+import config as c
 import alpaca_trade_api
 
 # cursor info referenced: https://pynative.com/python-cursor-fetchall-fetchmany-fetchone-to-read-rows-from-table/
 # PostgreSQL info referenced: https://realpython.com/python-sql-libraries/#postgresql
 # Alpaca info
-URL = ac.ALPACA_URL
-API_KEY_ID = ac.API_KEY_ID
-SECRET_KEY = ac.SECRET_KEY
+URL = c.ALPACA_URL
+API_KEY_ID = c.API_KEY_ID
+SECRET_KEY = c.SECRET_KEY
 
 # database info
-host = ac.DB_HOST
-name = ac.DB_NAME
-user = ac.DB_USER
-password = ac.DB_PASSWORD
+host = c.DB_HOST
+name = c.DB_NAME
+user = c.DB_USER
+password = c.DB_PASSWORD
 
 
 # connection to the database
@@ -27,7 +27,7 @@ def create_connection(host, name, user, password):
             password=password)
         print('Connection to PostgreSQL database successful.')
     except OperationalError as e:
-        print(f'Error: {e}')
+        print(f'Error connecting to database; {e}')
     return connection
 
 

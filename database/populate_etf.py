@@ -22,7 +22,7 @@ file_date = '2021-01-26'
 # if it does, pull information and add to etf_holdings database
 for etf in etfs:
     print(etf['symbol'])
-    with open(f"../data/{file_date}/{etf['symbol']}.csv") as file:
+    with open(f"../ark_tracker/data/{file_date}/{etf['symbol']}.csv") as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:

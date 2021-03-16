@@ -1,6 +1,6 @@
 """Module connects to our database, the alpaca API, gets a list of all tradable
 stocks and commits them to the 'stock' table"""
-from database_connection import api, cursor, conn
+from database.database_connection import api, cursor, conn
 
 # fetches list stocks
 assets = api.list_assets()
@@ -14,3 +14,4 @@ for asset in assets:
         """, (asset.symbol, asset.name, asset.exchange, False))
 
 conn.commit()
+conn.close()
