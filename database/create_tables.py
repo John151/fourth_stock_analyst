@@ -1,4 +1,4 @@
-import database_connection as dc
+import database.database_connection as dc
 
 connection = dc.conn
 cursor = dc.cursor
