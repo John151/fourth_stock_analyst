@@ -22,7 +22,7 @@ def create_all_tables():
                          'create_mentions_index', 'create_mentions_hypertable']
     for command in every_sql_command:
         create_table(command)
-
+    connection.close()
 
 create_stock_table = '''
 CREATE TABLE IF NOT EXISTS stock (
