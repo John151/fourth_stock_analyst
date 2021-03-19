@@ -2,16 +2,18 @@
 stocks and commits them to the 'stock' table"""
 from database.database_connection import api, cursor, conn
 
-# fetches list stocks
-assets = api.list_assets()
 
-for asset in assets:
-    if asset.tradable:
-        print(f'Inserting stock {asset.name}, {asset.symbol}')
-        cursor.execute("""
-        INSERT INTO stock (symbol, name, exchange, is_etf)
-        VALUES (%s, %s, %s, %s)
-        """, (asset.symbol, asset.name, asset.exchange, False))
+def populate_stocks_table():
+    # fetches list stocks
+    assets = api.list_assets()
 
-conn.commit()
-conn.close()
+    for asset in assets:
+        if asset.tradable:
+            print(f'Inserting stock {asset.name}, {asset.symbol}')
+            cursor.execute("""
+            INSERT INTO stock (symbol, name, exchange, is_etf)
+            VALUES (%s, %s, %s, %s)
+            """, (asset.symbol, asset.name, asset.exchange, False))
+
+    conn.commit()
+    conn.close()

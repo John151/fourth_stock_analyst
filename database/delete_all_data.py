@@ -4,7 +4,7 @@ connection = dc.conn
 cursor = dc.cursor
 
 delete_etf = 'delete from etf_holding;'
-detete_stock = 'delete from stock;'
+delete_stock = 'delete from stock;'
 delete_stock_price = 'delete from stock_price;'
 delete_mentions = 'delete from mentions;'
 
@@ -13,10 +13,10 @@ delete_mentions = 'delete from mentions;'
 
 def delete_all_database_data():
     delete_one_table_data(delete_etf)
-    delete_one_table_data(detete_stock)
+    delete_one_table_data(delete_stock)
     delete_one_table_data(delete_stock_price)
     delete_one_table_data(delete_mentions)
-
+    connection.close()
   
 def delete_one_table_data(delete_table):
     try:

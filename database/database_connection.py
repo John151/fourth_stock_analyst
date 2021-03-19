@@ -1,6 +1,6 @@
 import psycopg2
 import psycopg2.extras
-import config as c
+import database.config as c
 import alpaca_trade_api
 
 # cursor info referenced: https://pynative.com/python-cursor-fetchall-fetchmany-fetchone-to-read-rows-from-table/

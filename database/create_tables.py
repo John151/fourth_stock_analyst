@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS mentions (
     date_time TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     message TEXT NOT NULL,
     source TEXT NOT NULL,
+    mention_type TEXT NOT NULL,
     url TEXT NOT NULL,
     PRIMARY KEY (stock_id, date_time),
     CONSTRAINT fk_mention_stock FOREIGN KEY (stock_id) REFERENCES stock (id)
@@ -75,6 +76,3 @@ create_stock_price_hypertable = '''SELECT create_hypertable('stock_price', 'date
 
 create_mentions_index = 'CREATE INDEX ON mentions (stock_id, date_time DESC);'
 create_mentions_hypertable = '''SELECT create_hypertable('mentions', 'date_time');'''
-
-# create_table()
-# connection.close()

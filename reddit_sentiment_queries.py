@@ -1,4 +1,7 @@
-from database import database_connection as dc
+import database.data_queries as queries
 
-connection = dc.conn
-cursor = dc.cursor
+
+def find_number_mentions(date, end_date):
+    print('Finding most mentioned stocks...')
+    rows = queries.calculate_number_mentions_date(date, end_date)
+    return rows

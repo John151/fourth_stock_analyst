@@ -3,9 +3,9 @@ from database import data_queries as q
 # we are testing with just two dates right now
 # more will be added and more interesting queries will become possible
 # earlier date
-date_1 = '2021-03-11'
+#date_1 = '2021-03-11'
 # later date
-date_2 = '2021-01-26'
+#date_2 = '2021-01-26'
 
 
 """this function calls query functions in 'date_queries' module, finds if any new stocks were added 
@@ -15,7 +15,7 @@ to find newly deleted, date_1 should be previous date, date_2 a more recent date
 """
 
 
-def temporary_collection_of_functions(date_1, date_2):
+def ark_change_information(date_1, date_2):
     newly_changed_stocks_results = q.find_new_appearances(date_1, date_2)
     new_stock_id_list = q.list_changes_in_holdings(newly_changed_stocks_results)
     if bool(new_stock_id_list):
@@ -25,4 +25,6 @@ def temporary_collection_of_functions(date_1, date_2):
         # raftKings Inc. Class A Common Stock', 'NASDAQ', False], [20654, 'RBLX', 'Roblox Corporation', 'NYSE', False]]:
 
 
-# temporary_collection_of_functions(date_1, date_2)
+def ark_largest_holdings_current(limit):
+    results = q.list_largest_holdings(limit)
+    return results
